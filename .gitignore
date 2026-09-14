@@ -1,4 +1,5 @@
-data/private/
+data/private/*
+!data/private/README.md
 data/real/
 secrets/
 .env
@@ -13,6 +14,10 @@ secrets/
 build/
 *.xlsx
 *.xlsm
-!data/для_загрузки_в_чат/**/*.xlsx
+!data/sample/**/*.xlsx
 __pycache__/
 *.pyc
+output/*
+!output/README.md
+!output/sample/
+!output/sample/**
