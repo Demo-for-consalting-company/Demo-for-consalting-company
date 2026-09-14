@@ -10,3 +10,8 @@ secrets/
 *.tmp
 *.swp
 ~*
+build/
+*.xlsx
+*.xlsm
+__pycache__/
+*.pyc
