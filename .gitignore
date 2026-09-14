@@ -1,4 +1,5 @@
-data/private/
+data/private/*
+!data/private/README.md
 data/real/
 secrets/
 .env
@@ -10,3 +11,15 @@ secrets/
 *.tmp
 *.swp
 ~*
+build/
+*.xlsx
+*.xlsm
+!data/sample/**/*.xlsx
+__pycache__/
+*.pyc
+output/*
+!output/README.md
+!output/sample/
+!output/sample/**
+!output/pdf/
+!output/pdf/**

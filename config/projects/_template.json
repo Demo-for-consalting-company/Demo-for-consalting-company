@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "project_id": "replace-me",
+  "description": "Скопируйте файл, задайте правила от частных к общим и храните отдельно для каждого проекта.",
+  "default_operation_project": "Общий",
+  "rules": [
+    {
+      "name": "Пример правила",
+      "when": {"direction": "credit", "contains_any": ["ключевая фраза"]},
+      "set": {
+        "article": "Статья операции",
+        "project": "Проект аналитики",
+        "cash_flow_section": "Операционная деятельность",
+        "cash_flow_line": "Строка ДДС",
+        "pnl_line": "Строка ОПиУ",
+        "balance_account": "Балансовый счёт",
+        "include_cash_flow": true,
+        "include_pnl": true
+      }
+    }
+  ]
+}
