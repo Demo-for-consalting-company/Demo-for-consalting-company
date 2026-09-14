@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "demo-bank-import"
 version = "0.1.0"
-description = "Учебный импорт выписок Т-Банка, Альфа-Банка и СберБизнес"
+description = "Обработка выписок Т-Банка, Альфа-Банка и СберБизнес по правилам проекта"
 requires-python = ">=3.11"
 dependencies = ["openpyxl>=3.1,<4"]
 
@@ -17,4 +17,3 @@ bank-import = "bank_import.__main__:main"
 
 [tool.setuptools.packages.find]
 include = ["bank_import*"]
-

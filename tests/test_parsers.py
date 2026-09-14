@@ -36,7 +36,7 @@ class ParserTests(unittest.TestCase):
             "Назначение платежа": "Оплата по проекту Орион",
             "Счет контрагента": "DEMO-COUNTER",
             "ИНН контрагента": "DEMO-INN",
-            "Наименование контрагента": "ООО Учебный клиент",
+            "Наименование контрагента": "ООО Тестовый клиент",
             "Кредит": "1000",
             "Дебет": "0",
         })
@@ -56,7 +56,7 @@ class ParserTests(unittest.TestCase):
         sheet["A1"], sheet["B1"] = "Выписка по счёту", "DEMO-ALFA"
         sheet["A11"] = "Дата"
         sheet.append([])
-        values = ["01.08.2026", "A-1", 500, None, "ООО Подрядчик", "DEMO-INN", "DEMO-KPP", "DEMO-ACC", "DEMO-BIK", "Учебный банк", "Оплата подрядчику по проекту Орион", None, "Платежное поручение"]
+        values = ["01.08.2026", "A-1", 500, None, "ООО Подрядчик", "DEMO-INN", "DEMO-KPP", "DEMO-ACC", "DEMO-BIK", "Тестовый банк", "Оплата подрядчику по проекту Орион", None, "Платежное поручение"]
         for column, value in enumerate(values, start=1):
             sheet.cell(13, column, value)
         workbook.save(path)
@@ -69,7 +69,7 @@ class ParserTests(unittest.TestCase):
         sheet.title = "Выписка"
         sheet["B5"] = "ВЫПИСКА ОПЕРАЦИЙ ПО ЛИЦЕВОМУ СЧЕТУ"
         sheet["M5"] = "DEMO-SBER"
-        values = [None, "01.08.2026 10:15", None, None, "DEMO-SBER\nDEMO-INN-OWN\nООО Учебное ЮЛ", None, None, None, "DEMO-COUNTER\nDEMO-INN\nООО Арендодатель", 750, None, None, None, None, "S-1", None, "01", "DEMO-BIK Учебный банк", None, None, "Аренда учебного офиса"]
+        values = [None, "01.08.2026 10:15", None, None, "DEMO-SBER\nDEMO-INN-OWN\nООО Тестовая компания", None, None, None, "DEMO-COUNTER\nDEMO-INN\nООО Арендодатель", 750, None, None, None, None, "S-1", None, "01", "DEMO-BIK Тестовый банк", None, None, "Аренда офиса"]
         for column, value in enumerate(values, start=1):
             sheet.cell(12, column, value)
         sheet["B13"] = "б/с"

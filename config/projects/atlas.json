@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "project_id": "training-consulting",
-  "description": "Учебный маппинг. Для реального проекта создаётся отдельный JSON-файл.",
+  "project_id": "atlas",
+  "description": "Правила разноски операций компании «Атлас». Для другого клиента создаётся отдельный файл.",
   "default_operation_project": "Общий",
   "rules": [
     {
@@ -71,7 +71,7 @@
     },
     {
       "name": "Получение займа",
-      "when": {"direction": "credit", "contains_any": ["получение учебного займа", "получение кредита"]},
+      "when": {"direction": "credit", "contains_any": ["получение займа", "получение кредита"]},
       "set": {"article": "Получение кредита/займа", "project": "Общий", "cash_flow_section": "Финансовая деятельность", "cash_flow_line": "Получение кредитов и займов", "pnl_line": "", "balance_account": "Займы", "include_cash_flow": true, "include_pnl": false}
     },
     {
@@ -111,7 +111,7 @@
     },
     {
       "name": "Внутренний перевод",
-      "when": {"contains_any": ["внутренний перевод", "резервный учебный счёт"]},
+      "when": {"contains_any": ["внутренний перевод", "перевод между своими счетами"]},
       "set": {"article": "Внутренний перевод", "project": "Общий", "cash_flow_section": "Не включать", "cash_flow_line": "Внутренние переводы", "pnl_line": "", "balance_account": "Денежный счет", "include_cash_flow": false, "include_pnl": false}
     }
   ]

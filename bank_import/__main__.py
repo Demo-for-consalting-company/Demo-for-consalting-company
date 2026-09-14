@@ -8,7 +8,7 @@ from .pipeline import process_files, write_outputs
 
 
 def parser() -> argparse.ArgumentParser:
-    result = argparse.ArgumentParser(description="Импорт учебных выписок Т-Банка, Альфы и Сбера")
+    result = argparse.ArgumentParser(description="Обработка выписок Т-Банка, Альфа-Банка и СберБизнес")
     result.add_argument("inputs", nargs="+", help="CSV/XLSX-файлы выписок")
     result.add_argument("--mapping", required=True, help="JSON-маппинг конкретного проекта")
     result.add_argument("--output-dir", default="build/import", help="Каталог контрольных результатов")
@@ -26,7 +26,7 @@ def main() -> None:
     files = write_outputs(run, args.output_dir)
     uploaded = 0
     if args.spreadsheet_id:
-        uploaded = append_journal(args.spreadsheet_id, run.unique, args.credentials, args.sheet_name)
+        uploaded = append_journal(args.spreadsheet_id, run.ready, args.credentials, args.sheet_name)
     print(json.dumps({
         "input": run.input_count,
         "ready": len(run.ready),
@@ -39,4 +39,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

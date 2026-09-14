@@ -13,5 +13,6 @@ secrets/
 build/
 *.xlsx
 *.xlsm
+!data/для_загрузки_в_чат/**/*.xlsx
 __pycache__/
 *.pyc
