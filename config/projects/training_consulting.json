@@ -7,12 +7,12 @@
     {
       "name": "Клиент — проект Орион",
       "when": {"direction": "credit", "contains_all": ["оплат", "орион"]},
-      "set": {"article": "Оплата от покупателя", "project": "Орион", "cash_flow_section": "Операционная деятельность", "cash_flow_line": "Поступления от покупателей", "pnl_line": "Выручка по договорам", "balance_account": "Расчёты с покупателями", "include_cash_flow": true, "include_pnl": true}
+      "set": {"article": "Оплата от покупателя", "project": "Орион", "cash_flow_section": "Операционная деятельность", "cash_flow_line": "Поступления от покупателей", "pnl_line": "Выручка по договорам подряда", "balance_account": "Выручка", "include_cash_flow": true, "include_pnl": true}
     },
     {
       "name": "Клиент — проект Вектор",
       "when": {"direction": "credit", "contains_all": ["оплат", "вектор"]},
-      "set": {"article": "Оплата от покупателя", "project": "Вектор", "cash_flow_section": "Операционная деятельность", "cash_flow_line": "Поступления от покупателей", "pnl_line": "Выручка по договорам", "balance_account": "Расчёты с покупателями", "include_cash_flow": true, "include_pnl": true}
+      "set": {"article": "Оплата от покупателя", "project": "Вектор", "cash_flow_section": "Операционная деятельность", "cash_flow_line": "Поступления от покупателей", "pnl_line": "Выручка по договорам подряда", "balance_account": "Выручка", "include_cash_flow": true, "include_pnl": true}
     },
     {
       "name": "Аванс клиента — Орион",
@@ -27,17 +27,17 @@
     {
       "name": "Подрядчик — Орион",
       "when": {"direction": "debit", "contains_all": ["подряд", "орион"]},
-      "set": {"article": "Подрядчики", "project": "Орион", "cash_flow_section": "Операционная деятельность", "cash_flow_line": "Оплата подрядчикам", "pnl_line": "Подрядные работы", "balance_account": "Расчёты с поставщиками", "include_cash_flow": true, "include_pnl": true}
+      "set": {"article": "Подрядчики", "project": "Орион", "cash_flow_section": "Операционная деятельность", "cash_flow_line": "Оплата подрядчикам", "pnl_line": "Подрядные работы", "balance_account": "Подрядчики", "include_cash_flow": true, "include_pnl": true}
     },
     {
       "name": "Подрядчик — Вектор",
       "when": {"direction": "debit", "contains_all": ["подряд", "вектор"]},
-      "set": {"article": "Подрядчики", "project": "Вектор", "cash_flow_section": "Операционная деятельность", "cash_flow_line": "Оплата подрядчикам", "pnl_line": "Подрядные работы", "balance_account": "Расчёты с поставщиками", "include_cash_flow": true, "include_pnl": true}
+      "set": {"article": "Подрядчики", "project": "Вектор", "cash_flow_section": "Операционная деятельность", "cash_flow_line": "Оплата подрядчикам", "pnl_line": "Подрядные работы", "balance_account": "Подрядчики", "include_cash_flow": true, "include_pnl": true}
     },
     {
       "name": "Материалы — Орион",
       "when": {"direction": "debit", "contains_all": ["материал", "орион"]},
-      "set": {"article": "Материалы", "project": "Орион", "cash_flow_section": "Операционная деятельность", "cash_flow_line": "Оплата поставщикам", "pnl_line": "Материалы", "balance_account": "Расчёты с поставщиками", "include_cash_flow": true, "include_pnl": true}
+      "set": {"article": "Материалы", "project": "Орион", "cash_flow_section": "Операционная деятельность", "cash_flow_line": "Оплата материалов", "pnl_line": "Строительные материалы", "balance_account": "Материалы", "include_cash_flow": true, "include_pnl": true}
     },
     {
       "name": "Аванс поставщику — Орион",
@@ -52,67 +52,67 @@
     {
       "name": "Банковская комиссия",
       "when": {"direction": "debit", "contains_any": ["комисси", "расчётное обслуживание", "расчетное обслуживание"]},
-      "set": {"article": "Банковское обслуживание", "project": "Общий", "cash_flow_section": "Операционная деятельность", "cash_flow_line": "Банковское обслуживание", "pnl_line": "Расчётно-кассовое обслуживание", "balance_account": "Прочие расходы", "include_cash_flow": true, "include_pnl": true}
+      "set": {"article": "Банковское обслуживание", "project": "Общий", "cash_flow_section": "Операционная деятельность", "cash_flow_line": "Банковское обслуживание", "pnl_line": "Расчетно-кассовое обслуживание", "balance_account": "Операционные расходы", "include_cash_flow": true, "include_pnl": true}
     },
     {
       "name": "Налоги",
       "when": {"direction": "debit", "contains_any": ["налог", "бюджет"]},
-      "set": {"article": "Налоги", "project": "Общий", "cash_flow_section": "Операционная деятельность", "cash_flow_line": "Налоги и сборы", "pnl_line": "Налоги и сборы", "balance_account": "Расчёты по налогам", "include_cash_flow": true, "include_pnl": true}
+      "set": {"article": "Налоги/взыскания", "project": "Общий", "cash_flow_section": "Операционная деятельность", "cash_flow_line": "Прочие налоги и сборы", "pnl_line": "Прочие налоги, сборы, штрафы", "balance_account": "Налоги и взыскания", "include_cash_flow": true, "include_pnl": true}
     },
     {
       "name": "Аренда",
       "when": {"direction": "debit", "contains_any": ["аренд"]},
-      "set": {"article": "Аренда", "project": "Общий", "cash_flow_section": "Операционная деятельность", "cash_flow_line": "Аренда помещений", "pnl_line": "Аренда офисов", "balance_account": "Общехозяйственные расходы", "include_cash_flow": true, "include_pnl": true}
+      "set": {"article": "Аренда", "project": "Общий", "cash_flow_section": "Операционная деятельность", "cash_flow_line": "Аренда помещений", "pnl_line": "Аренда офисов", "balance_account": "Операционные расходы", "include_cash_flow": true, "include_pnl": true}
     },
     {
       "name": "Заработная плата",
       "when": {"direction": "debit", "contains_any": ["заработ", "зарплат"]},
-      "set": {"article": "Заработная плата", "project": "Общий", "cash_flow_section": "Операционная деятельность", "cash_flow_line": "Оплата труда", "pnl_line": "Заработная плата", "balance_account": "Расчёты с персоналом", "include_cash_flow": true, "include_pnl": true}
+      "set": {"article": "Зарплата", "project": "Общий", "cash_flow_section": "Операционная деятельность", "cash_flow_line": "Заработная плата", "pnl_line": "Окладные выплаты", "balance_account": "Фонд оплаты труда", "include_cash_flow": true, "include_pnl": true}
     },
     {
       "name": "Получение займа",
       "when": {"direction": "credit", "contains_any": ["получение учебного займа", "получение кредита"]},
-      "set": {"article": "Получение кредита/займа", "project": "Общий", "cash_flow_section": "Финансовая деятельность", "cash_flow_line": "Получение кредитов и займов", "pnl_line": "", "balance_account": "Займы и кредиты", "include_cash_flow": true, "include_pnl": false}
+      "set": {"article": "Получение кредита/займа", "project": "Общий", "cash_flow_section": "Финансовая деятельность", "cash_flow_line": "Получение кредитов и займов", "pnl_line": "", "balance_account": "Займы", "include_cash_flow": true, "include_pnl": false}
     },
     {
       "name": "Погашение займа",
       "when": {"direction": "debit", "contains_any": ["погашение основной", "погашение кредита"]},
-      "set": {"article": "Погашение кредита/займа", "project": "Общий", "cash_flow_section": "Финансовая деятельность", "cash_flow_line": "Погашение кредитов и займов", "pnl_line": "", "balance_account": "Займы и кредиты", "include_cash_flow": true, "include_pnl": false}
+      "set": {"article": "Погашение кредита/займа", "project": "Общий", "cash_flow_section": "Финансовая деятельность", "cash_flow_line": "Погашение кредитов и займов", "pnl_line": "", "balance_account": "Займы", "include_cash_flow": true, "include_pnl": false}
     },
     {
       "name": "Проценты по займу",
       "when": {"direction": "debit", "contains_any": ["процент"]},
-      "set": {"article": "Проценты уплаченные", "project": "Общий", "cash_flow_section": "Финансовая деятельность", "cash_flow_line": "Проценты уплаченные", "pnl_line": "Проценты по кредитам", "balance_account": "Прочие расходы", "include_cash_flow": true, "include_pnl": true}
+      "set": {"article": "Проценты уплаченные", "project": "Общий", "cash_flow_section": "Финансовая деятельность", "cash_flow_line": "Проценты уплаченные", "pnl_line": "Проценты по кредитам", "balance_account": "Операционные расходы", "include_cash_flow": true, "include_pnl": true}
     },
     {
       "name": "Маркетинг — Вектор",
       "when": {"direction": "debit", "contains_all": ["продвиж", "вектор"]},
-      "set": {"article": "Маркетинг", "project": "Вектор", "cash_flow_section": "Операционная деятельность", "cash_flow_line": "Маркетинг", "pnl_line": "Маркетинг", "balance_account": "Общехозяйственные расходы", "include_cash_flow": true, "include_pnl": true}
+      "set": {"article": "Маркетинг", "project": "Вектор", "cash_flow_section": "Операционная деятельность", "cash_flow_line": "Маркетинг и реклама", "pnl_line": "Реклама в интернете", "balance_account": "Маркетинг", "include_cash_flow": true, "include_pnl": true}
     },
     {
       "name": "Связь и интернет",
       "when": {"direction": "debit", "contains_any": ["связ", "интернет"]},
-      "set": {"article": "Связь и интернет", "project": "Общий", "cash_flow_section": "Операционная деятельность", "cash_flow_line": "Связь и ИТ", "pnl_line": "Связь и ИТ", "balance_account": "Общехозяйственные расходы", "include_cash_flow": true, "include_pnl": true}
+      "set": {"article": "Связь и интернет", "project": "Общий", "cash_flow_section": "Операционная деятельность", "cash_flow_line": "Связь и интернет", "pnl_line": "Расходы на интернет", "balance_account": "Операционные расходы", "include_cash_flow": true, "include_pnl": true}
     },
     {
       "name": "Обучение",
       "when": {"direction": "debit", "contains_any": ["обучен"]},
-      "set": {"article": "Обучение", "project": "Общий", "cash_flow_section": "Операционная деятельность", "cash_flow_line": "Обучение сотрудников", "pnl_line": "Обучение сотрудников", "balance_account": "Общехозяйственные расходы", "include_cash_flow": true, "include_pnl": true}
+      "set": {"article": "Обучение", "project": "Общий", "cash_flow_section": "Операционная деятельность", "cash_flow_line": "Прочие операционные расходы", "pnl_line": "Расходы на обучение", "balance_account": "Операционные расходы", "include_cash_flow": true, "include_pnl": true}
     },
     {
       "name": "Коммунальные услуги",
       "when": {"direction": "debit", "contains_any": ["коммунал"]},
-      "set": {"article": "Коммунальные услуги", "project": "Общий", "cash_flow_section": "Операционная деятельность", "cash_flow_line": "Коммунальные услуги", "pnl_line": "Коммунальные услуги", "balance_account": "Общехозяйственные расходы", "include_cash_flow": true, "include_pnl": true}
+      "set": {"article": "Коммунальные услуги", "project": "Общий", "cash_flow_section": "Операционная деятельность", "cash_flow_line": "Коммунальные услуги", "pnl_line": "Электричество", "balance_account": "Операционные расходы", "include_cash_flow": true, "include_pnl": true}
     },
     {
       "name": "Возврат аванса поставщика",
       "when": {"direction": "credit", "contains_all": ["возврат", "аванс"]},
-      "set": {"article": "Возврат аванса поставщика", "project": "Общий", "cash_flow_section": "Операционная деятельность", "cash_flow_line": "Возвраты от поставщиков", "pnl_line": "", "balance_account": "Авансы выданные", "include_cash_flow": true, "include_pnl": false}
+      "set": {"article": "Возврат от поставщика", "project": "Общий", "cash_flow_section": "Операционная деятельность", "cash_flow_line": "Возвраты от поставщиков", "pnl_line": "", "balance_account": "Авансы выданные", "include_cash_flow": true, "include_pnl": false}
     },
     {
       "name": "Внутренний перевод",
       "when": {"contains_any": ["внутренний перевод", "резервный учебный счёт"]},
-      "set": {"article": "Внутренний перевод", "project": "Общий", "cash_flow_section": "", "cash_flow_line": "", "pnl_line": "", "balance_account": "Денежные средства", "include_cash_flow": false, "include_pnl": false}
+      "set": {"article": "Внутренний перевод", "project": "Общий", "cash_flow_section": "Не включать", "cash_flow_line": "Внутренние переводы", "pnl_line": "", "balance_account": "Денежный счет", "include_cash_flow": false, "include_pnl": false}
     }
   ]
 }

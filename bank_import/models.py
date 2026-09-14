@@ -88,7 +88,11 @@ class ProcessedOperation:
     def journal_record(self) -> dict[str, Any]:
         op = self.operation
         mapped = self.mapping
-        money_account = "Денежные средства / Основной счёт"
+        money_account = {
+            "tbank": "Основной счёт",
+            "sber": "Резервный счёт",
+            "alfa": "Дополнительный счёт",
+        }.get(op.bank.casefold(), "Основной счёт")
         balance = mapped.balance_account if mapped else ""
         debit_account = money_account if op.direction == "credit" else balance
         credit_account = balance if op.direction == "credit" else money_account
@@ -103,10 +107,10 @@ class ProcessedOperation:
             "Сумма ДДС": str(op.money_in - op.money_out),
             "Сумма учета": str(op.amount),
             "Валюта": op.currency,
-            "Денежный счет": money_account,
+            "Счёт денежных средств": money_account,
             "Статья операции": mapped.article if mapped else "",
-            "ДДС: раздел": mapped.cash_flow_section if mapped and mapped.include_cash_flow else "",
-            "ДДС: строка": mapped.cash_flow_line if mapped and mapped.include_cash_flow else "",
+            "ДДС: раздел": mapped.cash_flow_section if mapped else "",
+            "ДДС: строка": mapped.cash_flow_line if mapped else "",
             "ОПиУ: строка": mapped.pnl_line if mapped and mapped.include_pnl else "",
             "Проект": mapped.project if mapped else "",
             "ЦФО": "Учебный ЦФО",
@@ -124,6 +128,7 @@ class ProcessedOperation:
             "Статус автоматики": self.status,
             "Требует уточнения": "Да" if self.status != "Готово" else "Нет",
             "Комментарий": self.reason,
+            "Балансовая статья": balance,
         }
 
     def raw_record(self) -> dict[str, Any]:

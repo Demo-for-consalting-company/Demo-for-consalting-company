@@ -102,6 +102,8 @@ class ParserTests(unittest.TestCase):
         self.assertEqual(result.ready[0].mapping.project, "Орион")
         record = result.ready[0].journal_record()
         self.assertEqual(set(record), set(JOURNAL_COLUMNS))
+        self.assertEqual(record["Счёт денежных средств"], "Основной счёт")
+        self.assertEqual(record["Балансовая статья"], "Покупатели")
         self.assertNotIn(input_path.name, record["ID источника"])
 
 
