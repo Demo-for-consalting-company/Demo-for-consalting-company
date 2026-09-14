@@ -1,0 +1,12 @@
+data/private/
+data/real/
+secrets/
+.env
+.env.*
+*.key
+*credentials*.json
+*service-account*.json
+.DS_Store
+*.tmp
+*.swp
+~*
