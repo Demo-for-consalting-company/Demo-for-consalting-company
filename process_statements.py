@@ -7,8 +7,8 @@ from bank_import.pipeline import process_files, write_outputs
 
 
 ROOT = Path(__file__).resolve().parent
-DEFAULT_INPUT_DIR = ROOT / "data" / "для_загрузки_в_чат" / "основной_сценарий"
-REPEAT_INPUT_DIR = ROOT / "data" / "для_загрузки_в_чат" / "дополнительно"
+DEFAULT_INPUT_DIR = ROOT / "data" / "sample" / "основной_сценарий"
+REPEAT_INPUT_DIR = ROOT / "data" / "sample" / "дополнительно"
 DEFAULT_MAPPING = ROOT / "config" / "projects" / "atlas.json"
 DEFAULT_OUTPUT = ROOT / "build" / "latest"
 
