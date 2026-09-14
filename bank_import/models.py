@@ -113,7 +113,7 @@ class ProcessedOperation:
             "ДДС: строка": mapped.cash_flow_line if mapped else "",
             "ОПиУ: строка": mapped.pnl_line if mapped and mapped.include_pnl else "",
             "Проект": mapped.project if mapped else "",
-            "ЦФО": "Учебный ЦФО",
+            "ЦФО": "ЦФО «Атлас»",
             "Контрагент": op.counterparty_name,
             "ИНН": op.counterparty_inn,
             "Назначение": op.purpose,
